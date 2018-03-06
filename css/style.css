@@ -1,0 +1,132 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.background {
+    width: 100vw;
+    height: 100vh;
+    background-color: #f1a26e;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.infinite-words,
+.hover-words {
+    height: 50px;
+    font-family: 'Lilita One', cursive;
+    font-size: 50px;
+    text-transform: uppercase;
+    display: flex;
+    overflow: hidden;
+}
+
+.infinite-words p,
+.hover-words p,
+.click-words p {
+    color: #fff;
+    margin-right: 15px;
+}
+
+.infinite-words ul li,
+.hover-words ul li,
+.click-words ul li {
+    list-style-type: none;
+    color: #351710;
+}
+
+.hover-words {
+    margin: 80px 0;
+}
+
+.click-words {
+    font-family: 'Lilita One', cursive;
+    font-size: 50px;
+    text-transform: uppercase;
+    display: flex;
+}
+
+.infinite-words ul {
+    animation: infiniteWord 8s ease infinite;
+}
+
+.hover-words ul {
+    transform: translate(0, 57px);
+}
+
+.hover-words:hover ul {
+    animation: hoverWord 1s ease 1;
+}
+
+.click-words.active-animation ul li {
+    animation: clickWord .5s ease 1 forwards;
+}
+
+@keyframes infiniteWord {
+    from {
+        transform: translate(0, 0);
+    }
+    10% {
+        transform: translate(0, 0);
+    }
+    20% {
+        transform: translate(0, -57px);
+    }
+    30% {
+        transform: translate(0, -57px);
+    }
+    40% {
+        transform: translate(0, -114px);
+    }
+    50% {
+        transform: translate(0, -114px);
+    }
+    60% {
+        transform: translate(0, -171px);
+    }
+    70% {
+        transform: translate(0, -171px);
+    }
+    80% {
+        transform: translate(0, -228px);
+    }
+    90% {
+        transform: translate(0, -228px);
+    }
+    to {
+        transform: translate(0, -285px);
+    }
+}
+
+@keyframes hoverWord {
+    from {
+        transform: translate(0, 57px);
+    }
+    35% {
+        transform: translate(0, 0px);
+    }
+    70% {
+        transform: translate(0, 0px);
+        opacity: 1;
+    }
+    to {
+        transform: translate(200px, 0px);
+        opacity: 0;
+    }
+}
+
+@keyframes clickWord {
+    from {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(2);
+        opacity: 1;
+    }
+    to {
+        transform: scale(2.2);
+        opacity: 0;
+    }
+}
